@@ -27,7 +27,7 @@ resource "azurerm_consumption_budget_subscription" "budget" {
     dimension {
       name = "ResourceGroupName"
       values = [
-        azurerm_resource_group.example.name,
+        azurerm_resource_group.SG_RG.name,
       ]
     }
 
@@ -51,7 +51,7 @@ resource "azurerm_consumption_budget_subscription" "budget" {
     ]
 
     contact_groups = [
-      azurerm_monitor_action_group.example.id,
+      azurerm_monitor_action_group.monitor_action.id,
     ]
 
     contact_roles = [
