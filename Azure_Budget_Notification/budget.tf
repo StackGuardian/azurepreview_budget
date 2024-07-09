@@ -1,10 +1,10 @@
 data "azurerm_subscription" "current" {}
 
 resource "azurerm_consumption_budget_subscription" "budget" {
-  name            = "budget"
+  name            = var.name
   subscription_id = data.azurerm_subscription.current.id
 
-  amount     = 20
+  amount     = var.amount
   time_grain = "Monthly"
 
   time_period {
@@ -13,21 +13,10 @@ resource "azurerm_consumption_budget_subscription" "budget" {
 
   notification {
     enabled   = true
-    threshold = 100
+    threshold = var.threshold
     operator  = "GreaterThan"
+    threshold_type = var.threshold_type
 
-    contact_emails = [
-      "digbijayinee.clara@stackguardian.io",
-      "johannes.scheuerer@stackguardian.io",
-    ]
+    contact_emails = var.emails
   }
-
-  #notification {
-    #enabled        = false
-    #threshold      = var.notification_threshold
-    #operator       = "GreaterThan"
-    #threshold_type = var.threshold_type
-
-    #contact_emails = var.emails
-  #}
 }
