@@ -17,6 +17,6 @@ resource "azurerm_consumption_budget_subscription" "budget" {
     operator  = "GreaterThan"
     threshold_type = var.threshold_type
 
-    contact_emails = var.emails
+    contact_emails = var.contact_emails
   }
 }
