@@ -13,7 +13,7 @@ resource "azurerm_consumption_budget_subscription" "budget" {
 
   notification {
     enabled   = true
-    threshold = var.notification_threshold
+    threshold = 50
     operator  = "GreaterThan"
 
     contact_emails = [
@@ -22,12 +22,12 @@ resource "azurerm_consumption_budget_subscription" "budget" {
     ]
   }
 
-  notification {
-    enabled        = false
-    threshold      = var.notification_threshold
-    operator       = "GreaterThan"
-    threshold_type = var.threshold_type
+  #notification {
+    #enabled        = false
+    #threshold      = var.notification_threshold
+    #operator       = "GreaterThan"
+    #threshold_type = var.threshold_type
 
-    contact_emails = var.emails
-  }
+    #contact_emails = var.emails
+  #}
 }
