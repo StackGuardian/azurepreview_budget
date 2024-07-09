@@ -13,7 +13,7 @@ resource "azurerm_consumption_budget_subscription" "budget" {
 
   notification {
     enabled   = true
-    threshold = 80
+    threshold = var.notification_threshold
     operator  = "GreaterThan"
 
     contact_emails = [
@@ -24,13 +24,10 @@ resource "azurerm_consumption_budget_subscription" "budget" {
 
   notification {
     enabled        = false
-    threshold      = 80
+    threshold      = var.notification_threshold
     operator       = "GreaterThan"
-    threshold_type = "Forecasted"
+    threshold_type = var.threshold_type
 
-    contact_emails = [
-      "digbijayinee.clara@stackguardian.io",
-      "johannes.scheuerer@stackguardian.io",
-    ]
+    contact_emails = var.emails
   }
 }
