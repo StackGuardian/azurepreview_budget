@@ -1,6 +1,6 @@
 variable "name" {
   type = string
-  #default = "SG_Azure_Budget_Notifications"
+  default = "SG_Azure_Budget_Notifications"
 }
 variable "amount" {
   type = number
@@ -14,6 +14,7 @@ variable "threshold_type" {
   type = string
   default = "Forecasted" # or "ACTUAL"
 }
-variable "contact_emails" {
+variable "emails" {
   type = list
+  default = " "
 }
