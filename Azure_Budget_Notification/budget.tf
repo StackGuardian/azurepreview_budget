@@ -4,7 +4,7 @@ resource "azurerm_consumption_budget_subscription" "budget" {
   name            = "budget"
   subscription_id = data.azurerm_subscription.current.id
 
-  amount     = 50
+  amount     = 20
   time_grain = "Monthly"
 
   time_period {
@@ -13,7 +13,7 @@ resource "azurerm_consumption_budget_subscription" "budget" {
 
   notification {
     enabled   = true
-    threshold = 50
+    threshold = 100
     operator  = "GreaterThan"
 
     contact_emails = [
