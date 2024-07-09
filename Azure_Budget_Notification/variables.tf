@@ -16,5 +16,5 @@ variable "threshold_type" {
 }
 variable "emails" {
   type = list
-  default = "digbijayinee.clara@stackguardian.io,johannes.scheuerer@stackguardian.io"
+  default = ["digbijayinee.clara@stackguardian.io, johannes.scheuerer@stackguardian.io"]
 }
