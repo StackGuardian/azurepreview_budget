@@ -1,4 +1,5 @@
 data "google_billing_account" "account" {
+  billing_account = "01C6DF-C07773-A2FEDC"
   display_name = "SG-Billing-Acct"
   open = true
 }
@@ -11,7 +12,7 @@ resource "google_billing_budget" "budget" {
   display_name    = "SG-GCP-Budget"
 
   budget_filter {
-    projects = ["projects/${data.google_project.project.id}"]
+    projects = ["projects/${data.google_project.project.number}"]
   }
 
   amount {
