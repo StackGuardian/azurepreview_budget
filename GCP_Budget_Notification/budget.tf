@@ -11,7 +11,7 @@ resource "google_billing_budget" "budget" {
   display_name    = "SG-GCP-Budget"
 
   budget_filter {
-    projects = ["projects/${data.google_project.project.number}"]
+    projects = ["projects/${data.google_project.project.id}"]
   }
 
   amount {
