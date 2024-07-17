@@ -43,6 +43,6 @@ resource "google_monitoring_notification_channel" "notification_channel" {
   type         = "email"
 
   labels = {
-    email_address = "digbijayinee.clara@stackguardian.io"
+    email_address = var.email
   }
 }
