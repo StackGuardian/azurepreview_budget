@@ -1,5 +1,5 @@
 data "google_billing_account" "account" {
-  billing_account = "01C6DF-C07773-A2FEDC"
+  billing_account = var.billing-account
   #display_name = "SG-Billing-Acct"
   open = true
 }
