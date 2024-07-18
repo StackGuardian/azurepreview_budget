@@ -19,7 +19,7 @@ resource "azurerm_consumption_budget_subscription" "budget" {
   time_grain = var.time_grain
 
   time_period {
-    start_date = formatdate("2024-07-0100:00:00Z", timestamp())
+    start_date = "2024-07-01T00:00:00Z"
   }
 
   notification {
