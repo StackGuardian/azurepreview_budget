@@ -16,7 +16,7 @@ variable "threshold" {
   default = 100
   description = "Threshold in % when the notification should be triggered"
 }
-variable "threshold_type" {
+variable "notification_type" {
   type = string
   default = "FORECASTED" # or "ACTUAL"
   description = "Is the notification sent out on actual or forecasted consumption"

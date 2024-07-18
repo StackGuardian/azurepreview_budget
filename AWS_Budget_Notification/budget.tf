@@ -11,7 +11,7 @@ resource "aws_budgets_budget" "total" {
     comparison_operator        = var.comparison_operator
     threshold                  = var.threshold
     threshold_type             = var.threshold_type
-    notification_type          = var.threshold_type
+    notification_type          = var.notification_type
     subscriber_email_addresses = var.emails
   }
 }
