@@ -18,7 +18,7 @@ variable "threshold_type" {
   description = "The type of threshold for the notification. This determines whether the notification is triggered by forecasted costs or actual costs."
   default = "Forecasted" # or "Actual"
 }
-variable "emails" {
+variable "contact_emails" {
   type = list
   description = "Specifies a list of email addresses to send the budget notification to when the threshold is exceeded."
   default = []
