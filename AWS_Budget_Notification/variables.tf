@@ -25,3 +25,13 @@ variable "emails" {
   type = list
   description = "List of emails the notification should be sent out to"
 }
+variable "threshold_type" {
+  type = string
+  description = "What kind of threshold is defined. Can be PERCENTAGE OR ABSOLUTE_VALUE."
+  default = "PERCENTAGE"
+}
+variable "comparison_operator" {
+  type = string
+  description = "Comparison operator to use to evaluate the condition. Can be LESS_THAN, EQUAL_TO or GREATER_THAN"
+  default = "GREATER_THAN"
+}
