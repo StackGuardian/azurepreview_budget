@@ -35,6 +35,7 @@ variable "time_grain" {
   - Quarterly.
   Defaults is set to Monthly.
   DESCRIPTION
+  default = "Monthly"
 }
 variable "start_date" {
   type = string
