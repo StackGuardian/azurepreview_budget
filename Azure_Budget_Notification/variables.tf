@@ -21,7 +21,7 @@ variable "threshold_type" {
 variable "emails" {
   type = list
   description = "Specifies a list of email addresses to send the budget notification to when the threshold is exceeded."
-  #default = []
+  default = []
 }
 variable "time_grain" {
   type =  string
