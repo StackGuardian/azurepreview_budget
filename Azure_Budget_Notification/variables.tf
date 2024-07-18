@@ -19,9 +19,9 @@ variable "threshold_type" {
   default = "Forecasted" # or "Actual"
 }
 variable "contact_emails" {
-  type = list
+  type = list(string)
   description = "Specifies a list of email addresses to send the budget notification to when the threshold is exceeded."
-  default = []
+  #default = []
 }
 variable "time_grain" {
   type =  string
@@ -37,11 +37,11 @@ variable "time_grain" {
   DESCRIPTION
   default = "Monthly"
 }
-variable "start_date" {
-  type = string
-  description = "The start date for the budget. The start date must be first of the month and should be less than the end date. Budget start date must be on or after June 1, 2017."
-  default = "2024-07-01T00:00:00Z"
-}
+#variable "start_date" {
+  #type = string
+  #description = "The start date for the budget. The start date must be first of the month and should be less than the end date. Budget start date must be on or after June 1, 2017."
+  #default = "2024-07-01T00:00:00Z"
+#}
 variable "operator" {
   type = string
   description = <<DESCRIPTION
