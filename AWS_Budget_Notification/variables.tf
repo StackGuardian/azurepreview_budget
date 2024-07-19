@@ -1,14 +1,17 @@
 variable "name" {
   type = string
   description = "Name of the budget resource"
+  default = "SG-AWS-Budgets"
 }
 variable "amount" {
-  type = string
+  type = number
   description = "Total amount of budget in dollars"
+  default = 100
 }
 variable "region" {
   type = string
   description = "AWS Region where the resource gets deployed"
+  default = "eu-central-1"
 }
 
 variable "threshold" {
@@ -24,6 +27,7 @@ variable "notification_type" {
 variable "emails" {
   type = list
   description = "List of emails the notification should be sent out to"
+  default = ["test@mail.com"]
 }
 variable "threshold_type" {
   type = string
