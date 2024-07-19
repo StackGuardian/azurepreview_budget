@@ -1,1 +1,0 @@
-emails = ["digbijayinee.clara@stackguardian.io", "johannes.scheuerer@stackguardian.io"]
