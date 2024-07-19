@@ -1,18 +1,7 @@
 data "azurerm_subscription" "current" {}
 
-resource "azurerm_resource_group" "main" {
-  name     = var.resourcename
-  location = var.location
-}
-
-resource "azurerm_monitor_action_group" "action_group" {
-  name                = var.action_group
-  resource_group_name = azurerm_resource_group.main.name
-  short_name          = "Notify-Action-Group"
-}
-
 resource "azurerm_consumption_budget_subscription" "budget" {
-  name            = var.budgetname
+  name            = var.name
   subscription_id = data.azurerm_subscription.current.id
 
   amount     = var.amount
@@ -20,6 +9,7 @@ resource "azurerm_consumption_budget_subscription" "budget" {
 
   time_period {
     start_date = var.start_date
+    end_date = var.end_date
   }
 
   notification {
@@ -28,9 +18,7 @@ resource "azurerm_consumption_budget_subscription" "budget" {
     operator  = var.operator
     threshold_type = var.threshold_type
 
-     contact_groups = [
-      azurerm_monitor_action_group.action_group.id,
-     ]
+     contact_emails = var.emails
 
   }
 }

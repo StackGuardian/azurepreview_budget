@@ -1,21 +1,7 @@
-variable "resourcename" {
-  type = string
-  description = "The name of the resource group. Must be unique on your Azure subscription"
-  #default = "SG_Azure_Budget_Notifications"
-}
-variable "action_group" {
-  type = string
-  description = "The name of the action group."
-  #default = "SG_Azure_Budget_Notifications"
-}
-variable "budgetname" {
+variable "name" {
   type = string
   description = "The name which should be used for this Subscription Consumption Budget."
-  #default = "SG_Azure_Budget_Notifications"
-}
-variable "location" {
-  type        = string
-  description = "(Required) The location where the resource group should be created. For a list of all Azure locations, please consult this link or run az account list-locations --output table."
+  default = "SG_Azure_Budget_Notifications"
 }
 variable "amount" {
   type = number
@@ -48,8 +34,13 @@ variable "time_grain" {
 }
 variable "start_date" {
   type = string
-  description = "The start date for the budget. The start date must be first of the month and should be less than the end date. Budget start date must be on or after June 1, 2017."
   default = "2024-07-01T00:00:00Z"
+  description = "The start date for the budget. The start date must be first of the month and should be less than the end date. Budget start date must be on or after June 1, 2017."
+}
+variable "end_date" {
+  type = string
+  default = "2087-07-01T00:00:00Z"
+  description = "The end date for the budget.Its an optional field, if not set this will be 10 years after the start date."
 }
 variable "operator" {
   type = string
@@ -60,4 +51,9 @@ variable "operator" {
   - GreaterThanOrEqualTo
   DESCRIPTION
   default = "GreaterThanOrEqualTo"
+}
+variable "emails" {
+  type = list(string)
+  default = [ "test@mail.com" ]
+  description = "Specifies a list of email addresses to send the budget notification to when the threshold is exceeded."
 }
