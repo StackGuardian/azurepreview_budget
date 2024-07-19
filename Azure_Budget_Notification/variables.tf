@@ -3,10 +3,6 @@ variable "name" {
   description = "The name which should be used for this Subscription Consumption Budget."
   default = "SG_Azure_Budget_Notifications"
 }
-variable "location" {
-  type        = string
-  description = "(Required) The location where the resource group should be created. For a list of all Azure locations, please consult this link or run az account list-locations --output table."
-}
 variable "amount" {
   type = number
   description = "The total amount of cost to track with the budget."
