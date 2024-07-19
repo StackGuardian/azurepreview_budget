@@ -35,7 +35,7 @@ variable "time_grain" {
 variable "start_date" {
   type = string
   description = "The start date for the budget. The start date must be first of the month and should be less than the end date. Budget start date must be on or after June 1, 2017."
-  default = "2017-07-01T00:00:00Z"
+  default = "2024-07-01T00:00:00Z"
 }
 variable "end_date" {
   type = string
