@@ -34,13 +34,13 @@ variable "time_grain" {
 }
 variable "start_date" {
   type = string
-  description = "The start date for the budget. The start date must be first of the month and should be less than the end date. Budget start date must be on or after June 1, 2017."
   default = "2024-07-01T00:00:00Z"
+  description = "The start date for the budget. The start date must be first of the month and should be less than the end date. Budget start date must be on or after June 1, 2017."
 }
 variable "end_date" {
   type = string
   default = "2087-07-01T00:00:00Z"
-  
+  description = "The end date for the budget.Its an optional field, if not set this will be 10 years after the start date."
 }
 variable "operator" {
   type = string
@@ -55,5 +55,5 @@ variable "operator" {
 variable "emails" {
   type = list(string)
   default = [ "test@mail.com" ]
-  
+  description = "Specifies a list of email addresses to send the budget notification to when the threshold is exceeded."
 }
