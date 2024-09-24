@@ -3,15 +3,15 @@ variable "name" {
   description = "The name which should be used for this Subscription Consumption Budget."
   default = "SG_Azure_Budget_Notifications"
 }
-variable "amount" {
+variable "total_limit" {
   type = number
   description = "The total amount of cost to track with the budget."
-  default = 10
+  default = 250
 }
 variable "threshold" {
   type = number
   description = "Threshold value associated with a notification. Notification is sent when the cost exceeded the threshold."
-  default = 10
+  default = 100
 }
 variable "threshold_type" {
   type = string
