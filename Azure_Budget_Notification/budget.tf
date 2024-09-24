@@ -9,8 +9,8 @@ resource "azurerm_consumption_budget_subscription" "budget" {
 
  
    time_period {
-   start_date = var.start_date
-   end_date = var.end_date
+   start_date = timestamp()
+   #end_date = var.end_date
  }
 
   notification {
