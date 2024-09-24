@@ -32,6 +32,7 @@ variable "time_grain" {
   DESCRIPTION
   default = "Monthly"
 }
+/*
 variable "start_date" {
   type = string
   default = "2024-07-01T00:00:00Z"
@@ -42,6 +43,8 @@ variable "end_date" {
   default = "2087-07-01T00:00:00Z"
   description = "The end date for the budget.Its an optional field, if not set this will be 10 years after the start date."
 }
+*/
+
 variable "operator" {
   type = string
   description = <<DESCRIPTION
