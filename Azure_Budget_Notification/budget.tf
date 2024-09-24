@@ -9,7 +9,7 @@ resource "azurerm_consumption_budget_subscription" "budget" {
 
  
    time_period {
-   start_date = timestamp()
+   start_date = formatdate("YYYY-MM-01'T'00:00:00Z", timestamp())
    #end_date = var.end_date
  }
 
