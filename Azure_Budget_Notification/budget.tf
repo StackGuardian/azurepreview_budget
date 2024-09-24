@@ -7,10 +7,11 @@ resource "azurerm_consumption_budget_subscription" "budget" {
   amount     = var.amount
   time_grain = var.time_grain
 
-  time_period {
-    start_date = var.start_date
-    end_date = var.end_date
-  }
+# Set start and end date if required
+#  time_period {
+#   start_date = var.start_date
+#    end_date = var.end_date
+# }
 
   notification {
     enabled   = true
